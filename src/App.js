@@ -1,5 +1,8 @@
+
+
+
+
 import React from "react";
-import Navbar from "./Navbar";
 import Category from "./Category";
 import Search from "./Search";
 import Table from "./Table";

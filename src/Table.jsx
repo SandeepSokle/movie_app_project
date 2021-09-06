@@ -23,9 +23,9 @@ class Table extends React.Component {
   render() {
     let moviesToDisplay = [];
 
-    if (this.props.currGenre != "All Genre") {
+    if (this.props.currGenre !== "All Genre") {
       moviesToDisplay = this.state.allMovies.filter((el) => {
-        return el.genre.name == this.props.currGenre;
+        return el.genre.name === this.props.currGenre;
       });
     } else {
       moviesToDisplay = this.state.allMovies;
@@ -78,7 +78,7 @@ class Table extends React.Component {
                     onClick={() => {
                       let allMovies = this.state.allMovies;
 
-                      let index = allMovies.findIndex((e) => e._id == el._id);
+                      let index = allMovies.findIndex((e) => e._id  === el._id);
 
                       allMovies[index].liked
                         ? (allMovies[index].liked = false)
@@ -97,7 +97,7 @@ class Table extends React.Component {
                         let allMovies = this.state.allMovies;
 
                         allMovies = allMovies.filter((eli) => {
-                          return eli._id != el._id;
+                          return eli._id !== el._id;
                         });
 
                         this.props.sendData(allMovies.length);
@@ -125,9 +125,9 @@ class Table extends React.Component {
                 this.setState({ currPage: currPage });
               }}
             >
-              <a class="page-link" href="#">
+              <span class="page-link" href="#">
                 Previous
-              </a>
+              </span>
             </li>
 
             {arr.map((el) => {
@@ -138,9 +138,9 @@ class Table extends React.Component {
                     this.setState({ currPage: el });
                   }}
                 >
-                  <a class="page-link" href="#">
-                    {el}
-                  </a>
+                 <span class="page-link" href="#">
+                {el}
+              </span>
                 </li>
               );
             })}
@@ -154,9 +154,9 @@ class Table extends React.Component {
                 this.setState({ currPage: currPage });
               }}
             >
-              <a class="page-link" href="#">
+              <span class="page-link" href="#">
                 Next
-              </a>
+              </span>
             </li>
           </ul>
         </nav>
