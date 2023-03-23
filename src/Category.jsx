@@ -8,7 +8,7 @@ class Category extends React.Component {
 
   componentDidMount() {
     //api call(msg bhejna=> get)
-    fetch("https://movieappapisokle.herokuapp.com/genre")
+    fetch("https://movie-app-yzek.onrender.com/genre")
       .then(function (res) {
         return res.json();
       })

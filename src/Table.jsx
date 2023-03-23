@@ -1,7 +1,5 @@
 import React from "react";
 
-
-
 class Table extends React.Component {
   state = {
     allMovies: [],
@@ -9,7 +7,7 @@ class Table extends React.Component {
   };
 
   componentDidMount() {
-    fetch("https://movieappapisokle.herokuapp.com/movies")
+    fetch("https://movie-app-yzek.onrender.com/movies")
       .then(function (res) {
         return res.json();
       })
@@ -78,7 +76,7 @@ class Table extends React.Component {
                     onClick={() => {
                       let allMovies = this.state.allMovies;
 
-                      let index = allMovies.findIndex((e) => e._id  === el._id);
+                      let index = allMovies.findIndex((e) => e._id === el._id);
 
                       allMovies[index].liked
                         ? (allMovies[index].liked = false)
@@ -138,9 +136,9 @@ class Table extends React.Component {
                     this.setState({ currPage: el });
                   }}
                 >
-                 <span class="page-link" href="#">
-                {el}
-              </span>
+                  <span class="page-link" href="#">
+                    {el}
+                  </span>
                 </li>
               );
             })}
